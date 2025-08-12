@@ -181,7 +181,7 @@ class BaseAgent(ABC):
         Desconecta el agente del servidor y limpia recursos.
         """
         # Finalizar grabación si está activa (BEFORE deleting environment)
-        if self.record_game and self.game_recording['steps']:
+        if self.record_game:
             self._save_recording()
         
         if self.env_id and self.connected:
